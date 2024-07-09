@@ -12,6 +12,12 @@ def get_location_names():
 
     return response
 
+@app.route('/hello', methods=['GET'])
+def get_hello():
+    util.load_saved_artifacts()
+    response = "hello"
+    return response
+
 @app.route('/predict_home_price', methods=['GET', 'POST'])
 def predict_home_price():
     total_sqft = float(request.form['total_sqft'])
