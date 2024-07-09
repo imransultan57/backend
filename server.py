@@ -9,7 +9,7 @@ def get_location_names():
     if len(locations) == 0:
         util.load_saved_artifacts()
         print("inside if")
-        locations.append(util.get_location_names())
+        locations[:] = util.get_location_names()
     response = jsonify({
         'locations': locations
     })
